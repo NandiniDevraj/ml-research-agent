@@ -1,0 +1,30 @@
+# Secrets
+.env
+ml-agent-dev_accessKeys
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Data files (too large for GitHub)
+data/processed_*.csv
+data/hospital_readmission.csv
+
+# MLflow local files
+mlflow.db
+mlruns/
+mlflow-artifacts/
+
+# Model files
+api/champion_model.pkl
+
+# Reports (generated dynamically)
+reports/*.pdf
+
+# OS
+.DS_Store
+Thumbs.db
