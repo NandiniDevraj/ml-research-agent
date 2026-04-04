@@ -1,4 +1,4 @@
-import pickle
+code = '''import pickle
 import numpy as np
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -101,3 +101,9 @@ def model_info():
         "performance": {"auc": 0.9177, "accuracy": 0.92},
         "pipeline": "6-agent autonomous ML system"
     }
+'''
+
+with open("main.py", "w", encoding="utf-8") as f:
+    f.write(code)
+
+print("main.py written successfully")

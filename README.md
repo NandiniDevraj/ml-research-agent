@@ -18,6 +18,16 @@ specialized agents run the complete ML pipeline:
 | 📝 Report Writer | Generates full PDF research report |
 | 🚀 Deployment Agent | Deploys model as FastAPI endpoint |
 
+## 🌐 Live Demo
+
+| Service | URL |
+|---------|-----|
+| API Docs | http://35.170.202.192:8000/docs |
+| Health Check | http://35.170.202.192:8000/health |
+| Predict Endpoint | http://35.170.202.192:8000/predict |
+| MLflow Dashboard | Run locally: `mlflow ui` |
+| Streamlit UI | Run locally: `streamlit run app/streamlit_app.py` |
+
 ## 🛠️ Tech Stack
 
 - **Agent Framework:** LangGraph + GPT-4o-mini
@@ -40,12 +50,13 @@ specialized agents run the complete ML pipeline:
    pip install -r requirements.txt
 ```
 4. Create `.env` file
-
-OPENAI_API_KEY=your_key
-AWS_REGION=us-east-1
-S3_BUCKET=your_bucket
-MLFLOW_TRACKING_URI=sqlite:///mlflow.db
-ARTIFACT_BUCKET=./mlflow-artifacts
+```
+   OPENAI_API_KEY=your_key
+   AWS_REGION=us-east-1
+   S3_BUCKET=your_bucket
+   MLFLOW_TRACKING_URI=sqlite:///mlflow.db
+   ARTIFACT_BUCKET=./mlflow-artifacts
+```
 
 5. Run the Streamlit UI
 ```bash
@@ -63,18 +74,20 @@ ARTIFACT_BUCKET=./mlflow-artifacts
 | LogisticRegression | 0.8006 | 0.80 | 0.80 |
 
 ## 🏗️ Architecture
-
+```
 CSV Upload → Streamlit UI
-↓
-LangGraph Orchestrator
-↙    ↓    ↓    ↓    ↓    ↘
-EDA  FE  Exp  Sel  Rep  Deploy
-↓
-MLflow Tracking + Registry
-↓
-AWS S3 Artifact Storage
-↓
-FastAPI Prediction Endpoint
+                ↓
+        LangGraph Orchestrator
+        ↙    ↓    ↓    ↓    ↓    ↘
+    EDA  FE  Exp  Sel  Rep  Deploy
+                ↓
+        MLflow Tracking + Registry
+                ↓
+        AWS S3 Artifact Storage
+                ↓
+        FastAPI Prediction Endpoint
+        (Live on AWS ECS Fargate)
+```
 
 ## 👩‍💻 Author
 
