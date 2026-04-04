@@ -1,6 +1,8 @@
 # Secrets
 .env
 ml-agent-dev_accessKeys
+task-definition.json
+write_main.py
 
 # Python
 venv/
