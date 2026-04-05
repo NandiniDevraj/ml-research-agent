@@ -23,8 +23,6 @@ specialized agents run the complete ML pipeline:
 | Service | URL |
 |---------|-----|
 | API Docs | http://35.170.202.192:8000/docs |
-| Health Check | http://35.170.202.192:8000/health |
-| Predict Endpoint | http://35.170.202.192:8000/predict |
 | MLflow Dashboard | Run locally: `mlflow ui` |
 | Streamlit UI | Run locally: `streamlit run app/streamlit_app.py` |
 
